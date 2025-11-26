@@ -1,0 +1,24 @@
+{
+  "name": "vn-sentiment-assistant-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "___COMMENT___": "--- KHU VỰC SETUP ---",
+    
+    "setup:frontend": "npm install && cd frontend && npm install",
+    
+    "setup:backend": "cd backend && python -m venv venv && venv\\Scripts\\python -m pip install -r requirements.txt",
+    
+    "setup:project": "concurrently \"npm run setup:frontend\" \"npm run setup:backend\" --names \"SETUP-FRONT,SETUP-BACK\" --prefix-colors \"green,yellow\"",
+
+    "___COMMENT_2___": "--- KHU VỰC CHẠY ---",
+
+    "server": "set PYTHONIOENCODING=utf-8 && cd backend && venv\\Scripts\\python run.py",
+    "client": "wait-on tcp:127.0.0.1:5000 && cd frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\" --names \"BACKEND,FRONTEND\" --prefix-colors \"blue,cyan\" --kill-others"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0"
+  }
+}
