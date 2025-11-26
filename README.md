@@ -48,6 +48,10 @@
 
     npm run setup:project
     ```
+
+    ```bash
+    npm run setup:project
+    ```
 3.  Khởi chạy hệ thống:
     ```bash
     npm run dev
