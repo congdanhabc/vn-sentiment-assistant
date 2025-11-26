@@ -45,8 +45,6 @@
 2.  Cài đặt các thư viện:
     ```bash
     npm install
-
-    npm run setup:project
     ```
 
     ```bash
