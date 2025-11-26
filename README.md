@@ -44,6 +44,8 @@
 1.  Mở Terminal tại thư mục gốc của dự án.
 2.  Cài đặt các thư viện:
     ```bash
+    npm install
+
     npm run setup:project
     ```
 3.  Khởi chạy hệ thống:
