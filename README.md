@@ -36,7 +36,7 @@
 
 ## ⚙️ Cài đặt và Chạy dự án
 
-### Yêu cầu tiên quyết
+### Yêu cầu
 *   Python (3.8 trở lên)
 *   Node.js (v16 trở lên)
 
