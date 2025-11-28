@@ -38,5 +38,9 @@ def analyze():
 
 @main_bp.route('/history', methods=['GET'])
 def history():
-    data = db.get_history()
+    # Lấy tham số offset từ URL (VD: /history?offset=10)
+    offset = request.args.get('offset', default=0, type=int)
+    limit = 10
+    
+    data = db.get_history(limit=limit, offset=offset)
     return jsonify(data)

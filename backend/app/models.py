@@ -35,17 +35,16 @@ class SentimentModel:
             )
             conn.commit()
 
-    def get_history(self, limit=50):
-        """Lấy lịch sử"""
+    def get_history(self, limit=10, offset=0):
+        """Lấy lịch sử có phân trang"""
         with self.get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute(
-                "SELECT id, text_input, sentiment_label, timestamp FROM sentiments ORDER BY timestamp DESC LIMIT ?", 
-                (limit,)
+                "SELECT id, text_input, sentiment_label, timestamp FROM sentiments ORDER BY timestamp DESC LIMIT ? OFFSET ?", 
+                (limit, offset)
             )
             rows = cursor.fetchall()
         
-        # Convert tuple sang dict để trả về JSON
         return [
             {"id": r[0], "text": r[1], "sentiment": r[2], "timestamp": r[3]} 
             for r in rows
