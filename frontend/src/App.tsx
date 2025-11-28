@@ -15,7 +15,7 @@ interface HistoryItem {
 }
 
 const API_URL = "http://localhost:5000";
-const PAGE_SIZE = 50;
+const PAGE_SIZE = 10; // Mỗi lần tải 10 dòng
 
 function App() {
   const [inputText, setInputText] = useState('');
